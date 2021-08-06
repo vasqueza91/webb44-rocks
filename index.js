@@ -1,5 +1,6 @@
 require('dotenv').config() // This allows to "inject" fake environment variables
 
+const { PORT } = require('./config')
 
 const express = require('express')
 const cors = require('cors')
@@ -23,6 +24,6 @@ server.use('*', (req, res, next) => {
     })
 })
 
-server.listen(process.env.PORT || 5000, () => {
-    console.log(`listening on ${process.env.PORT || 5000}`)
+server.listen(PORT, () => {
+    console.log(`listening on ${PORT}`)
 })
